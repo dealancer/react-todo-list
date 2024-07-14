@@ -3,8 +3,8 @@ import { useState } from "react";
 function Item({ item, onToggle }) {
     return (
         <div>
-            <input type="checkbox" checked={item.completed} onChange={onToggle}></input>
-            <span>{item.name}</span>
+            <input type="checkbox" id={'item-' + item.id} checked={item.completed} onChange={onToggle}></input>
+            <label for={'item-' + item.id}>{item.name}</label>
         </div>
     )
 }
@@ -24,9 +24,9 @@ export default function MyApp() {
 
     const [items, setItems] = useState(() => {
         return [
-            { id: 0, name:"item 1", completed: true },
-            { id: 1, name:"item 2", completed: false },
-            { id: 2, name:"item 3", completed: false }
+            { id: 0, name: 'item 1', completed: true },
+            { id: 1, name: 'item 2', completed: false },
+            { id: 2, name: 'item 3', completed: false }
         ];
     });
 
